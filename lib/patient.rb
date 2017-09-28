@@ -1,7 +1,7 @@
 require 'pry'
 class Patient
 
-  attr_accessor :name, :doctors, :appointments
+  attr_accessor :name, :doctor, :appointments
 
   def initialize(name)
     @name = name
@@ -10,12 +10,17 @@ class Patient
   end
 
   def add_appointment(appointment)
-    @appointments << self
+    # appointment = an appointment, with doctor, no patient
+    # self = a patient, no appts or doctors
+    #binding.pry
+    appointments << appointment
     appointment.patient = self
   end
 
   def doctors
-    #patientzero.doctors => @doctors
-    self.appointments.map {|appointment| appointment.patient}
+    # @doctors
+    appointments.map { |appointment| appointment.doctor}
   end
+
+
 end

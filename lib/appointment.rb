@@ -7,11 +7,10 @@ class Appointment
     @date = date
     @doctor = doctor
     @patient = patient
+    doctor.add_appointment(self)
 
   end
 
-  def doctor
-    #@doctor = self.doctor
-  end
+
 #apptdate.doctor => a doctor obj
 end
